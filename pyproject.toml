@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "incident-timeline-builder"
+version = "0.1.0"
+description = "A Trust & Safety tool for building structured incident timelines with escalation detection, response lag analysis, and summary reporting."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+keywords = ["trust-and-safety", "content-moderation", "incident-response", "timeline", "t&s"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Internet :: Log Analysis",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+incident-timeline = "incident_timeline.cli:main"
+
+[tool.setuptools]
+legacy-editable = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["incident_timeline*"]

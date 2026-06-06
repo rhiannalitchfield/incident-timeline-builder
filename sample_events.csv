@@ -1,0 +1,30 @@
+timestamp,event_type,actor,description,severity,case_id,tags
+2024-03-15 08:02:11,report,user:alice,"User reported coordinated harassment campaign targeting account @victim88",high,INC-2024-001,harassment|coordinated
+2024-03-15 08:04:55,auto_flag,system,"Classifier flagged 3 accounts for coordinated behavior patterns",high,INC-2024-001,automation|clf
+2024-03-15 08:45:00,review_start,agent:jsmith,"Opened case INC-2024-001; reviewing flagged accounts and reported content",high,INC-2024-001,
+2024-03-15 09:12:33,content_remove,agent:jsmith,"Removed 7 harassing posts across 3 accounts per policy §3.2",high,INC-2024-001,action
+2024-03-15 09:14:01,escalation,agent:jsmith,"Escalating to senior review: accounts show signs of botnet coordination",high,INC-2024-001,escalation
+2024-03-15 09:30:00,review_start,senior:cmendez,"Senior review opened: assessing botnet hypothesis, pulling account history",critical,INC-2024-001,
+2024-03-15 10:05:44,suspend,senior:cmendez,"Suspended 3 coordinating accounts pending investigation (30-day hold)",critical,INC-2024-001,action|suspension
+2024-03-15 10:06:02,user_notified,system,"Automated suspension notices sent to affected accounts",critical,INC-2024-001,
+2024-03-15 11:45:19,note,senior:cmendez,"Network graph analysis confirms 3 accounts share device fingerprint; likely same operator",critical,INC-2024-001,analysis
+2024-03-15 14:00:00,review_complete,senior:cmendez,"Senior review complete. Botnet confirmed. Escalating to ban.",critical,INC-2024-001,
+2024-03-15 14:02:55,ban,senior:cmendez,"Permanent ban applied to 3 accounts: TOS §7.1 (coordinated inauthentic behavior)",critical,INC-2024-001,action
+2024-03-15 14:03:10,user_notified,system,"Ban notices sent",critical,INC-2024-001,
+2024-03-15 16:22:00,appeal_received,user:acc_A,"Account A filed appeal citing 'automated error'",medium,INC-2024-001,appeal
+2024-03-16 09:00:00,appeal_denied,agent:jsmith,"Appeal denied — device fingerprint and timing data conclusive",medium,INC-2024-001,appeal
+2024-03-16 09:01:00,resolved,agent:jsmith,"Case INC-2024-001 closed. All actions upheld.",medium,INC-2024-001,
+2024-03-10 14:10:00,report,user:bob,"Reported account posting apparent self-harm content in comments",critical,INC-2024-002,self-harm|wellbeing
+2024-03-10 14:11:30,auto_flag,system,"Wellbeing classifier triggered on account @user_xyz (score: 0.94)",critical,INC-2024-002,automation
+2024-03-10 14:12:00,review_start,agent:tpatel,"Urgent review opened per wellbeing protocol",critical,INC-2024-002,
+2024-03-10 14:18:44,restrict,agent:tpatel,"Account restricted; wellbeing resources surfaced per product protocol",critical,INC-2024-002,action|wellbeing
+2024-03-10 14:19:00,user_notified,system,"Wellbeing resource card shown to @user_xyz",critical,INC-2024-002,
+2024-03-10 14:25:00,external_report,agent:tpatel,"Filed report with external wellbeing partner per escalation playbook",critical,INC-2024-002,escalation
+2024-03-10 15:00:00,note,agent:tpatel,"No further posts detected; account appears inactive since restriction",high,INC-2024-002,
+2024-03-11 09:30:00,review_complete,agent:tpatel,"24h check complete. Restriction maintained pending 7-day hold.",high,INC-2024-002,
+2024-03-17 09:30:00,resolved,agent:tpatel,"7-day hold expired; restriction lifted. Case closed.",medium,INC-2024-002,
+2024-03-18 09:05:00,report,user:carol,"Reported spam DMs: 'earn money fast' links sent from new account",low,INC-2024-003,spam|dm
+2024-03-18 09:06:15,auto_flag,system,"Spam classifier flagged account (score: 0.88); account age: 2 days",low,INC-2024-003,automation
+2024-03-18 09:20:00,review_start,agent:jsmith,"Quick review: clear spam pattern, no escalation needed",low,INC-2024-003,
+2024-03-18 09:22:00,ban,agent:jsmith,"Immediate ban: spam/phishing TOS §5.4. Account age 2 days confirms throwaway.",low,INC-2024-003,action
+2024-03-18 09:22:30,resolved,agent:jsmith,"Case closed.",low,INC-2024-003,
